@@ -1,0 +1,14 @@
+[
+  {
+    "nickname": "botusername",
+    "server": "irc.rizon.net",
+    "ircOptions": {
+      "secure": true,
+      "port": 6697
+    },
+    "token": "FILL_ME_IN",
+    "channelMapping": {
+      "#caa": "#CAA"
+    }
+  }
+]
