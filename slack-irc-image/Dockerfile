@@ -13,8 +13,12 @@ RUN useradd --uid 1000 -m slackirc
 # Update npm
 RUN /usr/bin/npm install -g npm
 
-# Install slack-irc
-RUN /usr/local/bin/npm install -g slack-irc
+# Install slack-irc inside the slackirc home dir
+RUN cd /home/slackirc && \
+    git clone -b single-user https://github.com/kennydo/slack-irc.git && \
+    cd slack-irc && \
+    npm install && \
+    npm run build
 
 # Create the runit service for slack-irc
 RUN mkdir /etc/service/slack-irc
